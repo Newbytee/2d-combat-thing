@@ -1,7 +1,9 @@
 #include "GameManager.h"
 
 int main() {
-	GameManager *game = new GameManager;
+	GameManager *gamePtr = nullptr;
+
+	gamePtr = new GameManager;
 
 	return 0;
 }
