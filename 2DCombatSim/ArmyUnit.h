@@ -6,9 +6,9 @@ public:
 	~ArmyUnit();
 	void move(int x, int y);
 private:
-	int _x;
-	int _y;
-	int _hp;
-	int _atk;
-	int _type;
+	int *_x = nullptr;
+	int *_y = nullptr;
+	int *_hp = nullptr;
+	int *_atk = nullptr;
+	int *_type = nullptr;
 };

@@ -1,9 +1,12 @@
 #pragma once
 
+#include <vector>
+
 class Level {
 public:
-	Level();
+	Level(int levelN);
 	~Level();
+	char getTile(char x, char y);
 private:
-
+	std::vector<std::string> *_level;
 };
