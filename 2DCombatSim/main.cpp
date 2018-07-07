@@ -7,7 +7,7 @@ int main() {
 	std::vector<int> *testVector = nullptr;
 	unsigned int *testPtr =  new unsigned int(1);
 	*testPtr = 5;
-	std::cout << *testPtr << std::endl;
+	//std::cout << *testPtr << std::endl;
 
 	testVector = new std::vector<int>();
 

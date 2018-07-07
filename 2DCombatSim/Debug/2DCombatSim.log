@@ -1,2 +1,5 @@
-﻿  main.cpp
-  2DCombatSim.vcxproj -> C:\Users\Kir\Source\Repos\2d-combat-thing\Debug\2DCombatSim.exe
+﻿  GameManager.cpp
+  Level.cpp
+c:\users\kir\source\repos\2d-combat-thing\2dcombatsim\level.cpp(40): warning C4477: 'printf' : format string '%c' requires an argument of type 'int', but variadic argument 1 has type 'std::string'
+  Generating Code...
+  2DCombatSim.vcxproj -> C:\Users\Kir\source\repos\2d-combat-thing\Debug\2DCombatSim.exe
