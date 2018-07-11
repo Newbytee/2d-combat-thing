@@ -2,7 +2,7 @@
 
 GameManager::GameManager() {
 	_level = new Level(1);
-	//_level->printLevel();
+	_level->printLevel();
 }
 
 GameManager::~GameManager() {

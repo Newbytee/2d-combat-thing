@@ -4,10 +4,10 @@
 #include <fstream>
 
 Level::Level(int levelN) {
-	std::ifstream *levelFile = new std::ifstream("levels/level" + std::to_string(levelN) + ".txt");
+	std::ifstream *levelFile = new std::ifstream("level.txt");
 	
 	if (!(levelFile->is_open())) {
-		std::cout << perror;
+		std::cout << *perror;
 		return;
 	}
 
