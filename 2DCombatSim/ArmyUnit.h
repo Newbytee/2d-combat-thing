@@ -2,7 +2,7 @@
 
 class ArmyUnit {
 public:
-	ArmyUnit();
+	ArmyUnit(unsigned int x, unsigned int y, int hp, int atk, int type);
 	~ArmyUnit();
 	void move(int x, int y);
 private:

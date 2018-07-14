@@ -1,6 +1,6 @@
 #include "ArmyUnit.h"
 
-ArmyUnit::ArmyUnit() {
+ArmyUnit::ArmyUnit(unsigned int x, unsigned int y, int hp, int atk, int type) {
 
 }
 

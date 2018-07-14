@@ -6,7 +6,10 @@ class Level {
 public:
 	Level(int levelN);
 	~Level();
-	char getTile(char x, char y);
+	char getTile(unsigned int x, unsigned int y);
+	void setTile(unsigned int x, unsigned int y);
+	void printLevel();
 private:
-	std::vector<std::string> *_level;
+	int *currentLevel = nullptr;
+	std::vector<std::string> *_level = nullptr;
 };
