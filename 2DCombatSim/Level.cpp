@@ -13,6 +13,8 @@ Level::Level(int levelN) {
 
 	std::string input;
 
+	_level->push_back("hi");
+
 	for (int i = 0; std::getline(*levelFile, input); i++) {
 		_level->push_back(input + '\0');
 	}
@@ -37,7 +39,7 @@ void Level::printLevel() {
 	for (int x = 0; x < levelHeight; x++) {
 		for (unsigned int y = 0; y < levelRef[x].size(); y++) {
 			//std::cout << x << '\t' << y;
-			printf("%c%c", _level[x][y], ' ');
+			printf("%c%c", levelRef[x][y], ' ');
 		}
 		printf("\n");
 	}
