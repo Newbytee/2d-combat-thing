@@ -12,17 +12,27 @@ Level::Level(int levelN) {
 	}
 
 	std::string input;
-
-	_level->push_back("hi");
+	std::string level;
+	std::string enemies;
 
 	for (int i = 0; std::getline(*levelFile, input); i++) {
-		_level->push_back(input + '\0');
+		for (int j = 0; j < input.length(); j++) {
+			switch (input[j]) {
+			case '$':
+			case '&':
+				enemies.push_back(input[j]);
+				level.push_back('.');
+				break;
+			default:
+				break;
+			}
+		}
+		_level.push_back(input + '\0');
 	}
 }
 
 
 Level::~Level() {
-	delete[] _level;
 }
 
 char Level::getTile(unsigned int x, unsigned int y) {
@@ -34,7 +44,7 @@ void Level::setTile(unsigned int x, unsigned int y) {
 
 void Level::printLevel() {
 	int levelHeight = _level->size();
-	std::vector<std::string>& levelRef = *_level;
+	std::vector<std::string> &levelRef = *_level;
 	
 	for (int x = 0; x < levelHeight; x++) {
 		for (unsigned int y = 0; y < levelRef[x].size(); y++) {

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include "ArmyUnit.h"
 
 class Level {
 public:
@@ -10,6 +11,7 @@ public:
 	void setTile(unsigned int x, unsigned int y);
 	void printLevel();
 private:
-	int *currentLevel = nullptr;
-	std::vector<std::string> *_level = nullptr;
+	int currentLevel;
+	std::vector<std::string> _level;
+	std::vector<std::vector<ArmyUnit> > _units;
 };
