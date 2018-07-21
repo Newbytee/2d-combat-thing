@@ -1,15 +1,14 @@
 #include "ArmyUnit.h"
 
-ArmyUnit::ArmyUnit(unsigned int x, unsigned int y, int hp, int atk, int type) {
-
+ArmyUnit::ArmyUnit(unsigned int x, unsigned int y, int hp, int atk, char type) {
+	_x = x;
+	_y = y;
+	_hp = hp;
+	_atk = atk;
+	_type = type;
 }
 
 ArmyUnit::~ArmyUnit() {
-	delete _x;
-	delete _y;
-	delete _hp;
-	delete _atk;
-	delete _type;
 }
 
 void ArmyUnit::move(int x, int y) {

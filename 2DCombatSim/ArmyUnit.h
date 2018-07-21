@@ -2,13 +2,13 @@
 
 class ArmyUnit {
 public:
-	ArmyUnit(unsigned int x, unsigned int y, int hp, int atk, int type);
+	ArmyUnit(unsigned int x, unsigned int y, int hp, int atk, char type);
 	~ArmyUnit();
 	void move(int x, int y);
 private:
-	int *_x = nullptr;
-	int *_y = nullptr;
-	int *_hp = nullptr;
-	int *_atk = nullptr;
-	int *_type = nullptr;
+	int _x;
+	int _y;
+	int _hp;
+	int _atk;
+	char _type;
 };
