@@ -5,6 +5,9 @@ public:
 	ArmyUnit(unsigned int x, unsigned int y, int hp, int atk, char type);
 	~ArmyUnit();
 	void move(int x, int y);
+	char getType();
+	int getX();
+	int getY();
 private:
 	int _x;
 	int _y;

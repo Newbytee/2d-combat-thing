@@ -15,3 +15,15 @@ void ArmyUnit::move(int x, int y) {
 	_x += x;
 	_y += y;
 }
+
+char ArmyUnit::getType() {
+	return _type;
+}
+
+int ArmyUnit::getX() {
+	return _x;
+}
+
+int ArmyUnit::getY() {
+	return _y;
+}

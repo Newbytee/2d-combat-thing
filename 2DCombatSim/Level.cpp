@@ -1,56 +1,157 @@
 #include "Level.h"
 #include "ArmyUnit.h"
+#include "Maths.h"
 #include <iostream>
 #include <string>
 #include <fstream>
 
 Level::Level(int levelN) {
-	std::ifstream *levelFile = new std::ifstream("level.txt");
+	std::ifstream levelFile = std::ifstream("level.txt");
 	
-	if (!(levelFile->is_open())) {
-		std::cout << *perror;
+	if (!(levelFile.is_open())) {
+		std::cout << perror;
 		return;
 	}
 
 	std::string input;
 	std::string level;
+	std::vector<ArmyUnit *> units;
 
-	for (int y = 0; std::getline(*levelFile, input); y++) {
+	for (int y = 0; std::getline(levelFile, input); y++) {
 		for (int x = 0; x < input.length(); x++) {
-			switch (input[x]) {
+			char currentChar = input[x];
+			switch (currentChar) {
 			case '$':
 			case '&':
-				_units[y].push_back(ArmyUnit(x, y, 10, 10, input[x]));
+				units.push_back(new ArmyUnit(x, y, 10, 10, currentChar));
 				level.push_back('.');
 				break;
 			default:
-				//_units[y].push_back(ArmyUnit(x, y, 0, 0, ' '));
+				units.push_back(nullptr);
 				level.push_back(input[x]);
 				break;
 			}
 		}
-		_level.push_back(input + '\0');
+		_units.push_back(units);
+		_level.push_back(level + '\0');
+		level.clear();
+		units.clear();
 	}
 }
-
 
 Level::~Level() {
 }
 
+std::vector<std::string> Level::getCombinedVector() {
+	int levelHeight = _level.size();
+	std::vector<std::string> combinedVector = _level;
+
+	for (int y = 0; y < levelHeight; y++) {
+		for (int x = 0; x < combinedVector[y].size() - 1; x++) {
+			if (_units[y][x] != nullptr) {
+				combinedVector[_units[y][x]->getY()][_units[y][x]->getX()] = _units[y][x]->getType();
+				std::cout << x << '\t' << y << '\n';
+			}
+		}
+	}
+
+	return combinedVector;
+}
+
 char Level::getTile(unsigned int x, unsigned int y) {
+	return _level[y][x];
+}
+
+int Level::simulate() {
+	Maths maths;
+	unsigned int levelHeight = _level.size();
+	char type;
+	bool noTarget;
+	int searchDistance, moveX, moveY, deltaX, deltaY;
+
+	for (int unitY = 0; unitY < levelHeight; unitY++) {
+		for (int unitX = 0; unitX < _units[unitY].size(); unitX++) {
+			if (_units[unitY][unitX] != nullptr) {
+				type = _units[unitY][unitX]->getType();
+				noTarget = true;
+				searchDistance = 1;
+				while (noTarget) {
+					for (int searchY = unitY - searchDistance; searchY < searchDistance; searchY++) {
+						std::cout << searchY << '\t';
+						for (int searchX = unitX - searchDistance; searchX <= searchDistance; searchX++) {
+							if (_units[searchY][searchX] != nullptr && searchY >= 0 && searchX >= 0 && searchY < levelHeight && searchX < _level[0].size()) {
+								std::cout << "it was run, at least";
+								deltaX = maths.getVector(unitX, searchX);
+								deltaY = maths.getVector(unitY, searchY);
+								if (maths.getAbsoluteValue(deltaX) == maths.getAbsoluteValue(deltaY)) {
+									if (deltaX > 0) {
+										moveX = 1;
+									}
+									else {
+										moveX = -1;
+									}
+									if (deltaY > 0) {
+										moveY = 1;
+									}
+									else {
+										moveY = -1;
+									}
+								}
+								else if (deltaY < deltaX) {
+									if (deltaX > 0) {
+										moveX = 1;
+									}
+									else {
+										moveX = -1;
+									}
+									moveY = 0;
+								}
+								else if (deltaY > deltaX) {
+									if (deltaY > 0) {
+										moveY = 1;
+									}
+									else {
+										moveY = -1;
+									}
+									moveX = 0;
+								}
+								else {
+									std::cout << "halp";
+								}
+								_units[unitY][unitX]->move(moveX, moveY);
+								noTarget = false;
+							}
+
+						}
+					}
+					searchDistance++;
+				}
+			}
+		}
+	}
+
 	return 0;
 }
 
-void Level::setTile(unsigned int x, unsigned int y) {
+int Level::checkTile(unsigned int x, unsigned int y, char type) {
+	switch (_level[y][x]) {
+
+	}
+	return 0;
+}
+
+void Level::setTile(unsigned int x, unsigned int y, char type) {
+	_level[y][x] = type;
 }
 
 void Level::printLevel() {
 	int levelHeight = _level.size();
+	std::vector<std::string> outputVector = getCombinedVector();
 	
-	for (int x = 0; x < levelHeight; x++) {
-		for (unsigned int y = 0; y < _level[x].size(); y++) {
+	for (int y = 0; y < levelHeight; y++) {
+		for (unsigned int x = 0u; x < outputVector[y].size(); x++) {
 			//std::cout << x << '\t' << y;
-			printf("%c%c", _level[x][y], ' ');
+			printf("%c%c", outputVector[y][x], ' ');
 		}
 		printf("\n");
 	}

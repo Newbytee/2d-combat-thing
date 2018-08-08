@@ -6,6 +6,7 @@ class GameManager {
 public:
 	GameManager();
 	~GameManager();
+	void clearScreen();
 private:
 	Level *_level = nullptr;
 };
