@@ -4,13 +4,15 @@
 
 GameManager::GameManager() {
 	int tmp;
+	char input = 'g';
 	_level = new Level(1);
 	_level->printLevel();
-	std::cin >> tmp;
-	_level->simulate();
-	clearScreen();
-	_level->printLevel();
-	std::cin >> tmp;
+	do {
+		std::cin >> input;
+		_level->simulate();
+		clearScreen();
+		_level->printLevel();
+	} while (input != 'q');
 }
 
 GameManager::~GameManager() {

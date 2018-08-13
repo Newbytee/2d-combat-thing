@@ -13,6 +13,7 @@ public:
 	int checkTile(unsigned int x, unsigned int y, char type);	
 	void setTile(unsigned int x, unsigned int y, char type);
 	void printLevel();
+	int moveUnit(unsigned int originX, unsigned int originY, int moveX, int moveY);
 private:
 	int currentLevel;
 	std::vector<std::string> _level;
