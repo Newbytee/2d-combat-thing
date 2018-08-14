@@ -21,3 +21,7 @@ int ArmyUnit::getAtk() {
 char ArmyUnit::getType() {
 	return _type;
 }
+
+void ArmyUnit::setType(char type) {
+	_type = type;
+}

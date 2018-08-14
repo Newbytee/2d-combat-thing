@@ -7,6 +7,7 @@ public:
 	int getHp();
 	int getAtk();
 	char getType();
+	void setType(char type);
 private:
 	int _hp;
 	int _atk;

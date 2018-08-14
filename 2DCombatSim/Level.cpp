@@ -186,3 +186,14 @@ int Level::moveUnit(unsigned int originX, unsigned int originY, int moveX, int m
 		std::cout << "unable to move: unit undefined!\n";
 	}
 }
+
+int Level::moveUnit2(unsigned int unitX, unsigned int unitY, int moveFactorX, int moveFactorY) {
+	ArmyUnit *unitOrigin = _units[unitY][unitX];
+	ArmyUnit *unitMoveTo = _units[unitY + moveFactorY][unitX + moveFactorX];
+	delete unitMoveTo;
+	unitMoveTo = new ArmyUnit(*unitOrigin);
+	delete unitOrigin;
+	unitOrigin = nullptr;
+
+	return 0;
+}
