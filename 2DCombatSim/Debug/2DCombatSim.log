@@ -1,3 +1,9 @@
 ﻿  Level.cpp
-c:\users\kir\source\repos\2d-combat-thing\2dcombatsim\level.cpp(19): warning C4018: '<': signed/unsigned mismatch
-  2DCombatSim.vcxproj -> C:\Users\Kir\source\repos\2d-combat-thing\Debug\2DCombatSim.exe
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\level.cpp(21): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\level.cpp(50): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\level.cpp(72): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\level.cpp(73): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\level.cpp(82): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\level.cpp(145): warning C4060: switch statement contains no 'case' or 'default' labels
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\level.cpp(188): warning C4715: 'Level::moveUnit': not all control paths return a value
+  2DCombatSim.vcxproj -> C:\Users\Stefan Hansson\source\repos\2d-combat-thing\Debug\2DCombatSim.exe

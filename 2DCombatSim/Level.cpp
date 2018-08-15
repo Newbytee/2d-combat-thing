@@ -162,27 +162,3 @@ void Level::printLevel() {
 		printf("\n");
 	}
 }
-
-int Level::moveUnit(unsigned int originX, unsigned int originY, int moveX, int moveY) {
-	std::cout << "look at me: " << moveX << '\t' << moveY << '\n';
-	if (_units[originY][originX] != nullptr) {
-		int tmpHp = _units[originY][originX]->getHp();
-		int tmpAtk = _units[originY][originX]->getAtk();
-		char tmpType = _units[originY][originX]->getType();
-
-		if (_units[originY + moveY][originX + moveX] == nullptr) {
-			delete _units[originY + moveY][originX + moveX];
-			_units[originY + moveY][originX + moveX] = new ArmyUnit(tmpHp, tmpAtk, tmpType);
-			delete _units[originY][originX];
-			_units[originY][originX] = nullptr;
-			std::cout << "hi";
-			return 0;
-		}
-		else {
-			std::cout << "not hi";
-			return -1;
-		}
-	} else {
-		std::cout << "unable to move: unit undefined!\n";
-	}
-}

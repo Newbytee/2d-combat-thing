@@ -119,11 +119,13 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Maths.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArmyUnit.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Level.h" />
+    <ClInclude Include="Maths.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
