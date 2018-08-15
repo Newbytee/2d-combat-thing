@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/2DCombatSim/v15/ipch/AutoPCH/669e859050d24599/LEVEL.ipch
+/.vs/2DCombatSim/v15/Browse.VC.db
+/.vs/2DCombatSim/v15/.suo
