@@ -18,7 +18,7 @@ Level::Level(int levelN) {
 	std::vector<ArmyUnit *> units;
 
 	for (int y = 0; std::getline(levelFile, input); y++) {
-		for (int x = 0; x < input.length(); x++) {
+		for (unsigned int x = 0; x < input.length(); x++) {
 			char currentChar = input[x];
 			switch (currentChar) {
 			case '$':
@@ -47,7 +47,7 @@ std::vector<std::string> Level::getCombinedVector() {
 	std::vector<std::string> combinedVector = _level;
 
 	for (int y = 0; y < levelHeight; y++) {
-		for (int x = 0; x < combinedVector[y].size() - 1; x++) {
+		for (unsigned int x = 0; x < combinedVector[y].size() - 1; x++) {
 			if (_units[y][x] != nullptr) {
 				combinedVector[y][x] = _units[y][x]->getType();
 				std::cout << x << '\t' << y << '\n';
@@ -69,8 +69,8 @@ int Level::simulate() {
 	bool noTarget;
 	int searchDistance, moveX, moveY, deltaX, deltaY;
 
-	for (int unitY = 0; unitY < levelHeight; unitY++) {
-		for (int unitX = 0; unitX < _units[unitY].size(); unitX++) {
+	for (unsigned int unitY = 0; unitY < levelHeight; unitY++) {
+		for (unsigned int unitX = 0; unitX < _units[unitY].size(); unitX++) {
 			if (_units[unitY][unitX] != nullptr) {
 				type = _units[unitY][unitX]->getType();
 				noTarget = true;
@@ -121,7 +121,7 @@ int Level::simulate() {
 									}
 									std::cout << unitX << '\t' << unitY << '\n';
 									noTarget = false;
-									moveUnit(unitX, unitY, moveX, moveY);									
+									_unitBuffer.push_back(StoredArmyUnit(_units[unitY][unitX], unitX, unitY, searchX, searchY));
 								}
 							}
 						}

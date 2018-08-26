@@ -2,6 +2,7 @@
 
 #include <vector>
 #include "ArmyUnit.h"
+#include "StoredArmyUnit.h"
 
 class Level {
 public:
@@ -13,9 +14,9 @@ public:
 	int checkTile(unsigned int x, unsigned int y, char type);	
 	void setTile(unsigned int x, unsigned int y, char type);
 	void printLevel();
-	int moveUnit(unsigned int originX, unsigned int originY, int moveX, int moveY);
 private:
 	int currentLevel;
+	std::vector<StoredArmyUnit> _unitBuffer;
 	std::vector<std::string> _level;
 	std::vector<std::vector<ArmyUnit *> > _units;
 };
