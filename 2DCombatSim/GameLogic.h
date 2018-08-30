@@ -1,7 +1,8 @@
 #pragma once
-
-class GameLogic {
+class GameLogic
+{
 public:
 	GameLogic();
 	~GameLogic();
 };
+

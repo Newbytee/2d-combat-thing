@@ -18,6 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameLogic.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="UnitMap.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameLogic.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Unit.h" />
+    <ClInclude Include="UnitMap.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{F11CC0CF-D03E-4E2E-BEB1-5B8FC6A8C5A9}</ProjectGuid>
@@ -114,19 +129,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="ArmyUnit.cpp" />
-    <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="Level.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Maths.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ArmyUnit.h" />
-    <ClInclude Include="GameManager.h" />
-    <ClInclude Include="Level.h" />
-    <ClInclude Include="Maths.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
