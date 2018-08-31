@@ -4,7 +4,7 @@
 #include <string>
 
 UnitMap::UnitMap(std::string levelName) {
-	std::ifstream mapFile = std::ifstream(levelName + ".txt");
+	std::ifstream mapFile = std::ifstream("levels/" + levelName + ".txt");
 
 	if (!(mapFile.is_open())) {
 		std::cout << perror;
