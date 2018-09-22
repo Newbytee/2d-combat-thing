@@ -1,2 +1,11 @@
-﻿  StoredArmyUnit.cpp
+﻿  GameLogic.cpp
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(12): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(13): warning C4018: '<': signed/unsigned mismatch
+  GameManager.cpp
+  Unit.cpp
+  UnitMap.cpp
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\unitmap.cpp(19): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\unitmap.cpp(38): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\unitmap.cpp(39): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
   2DCombatSim.vcxproj -> C:\Users\Stefan Hansson\source\repos\2d-combat-thing\Debug\2DCombatSim.exe

@@ -12,11 +12,24 @@ UnitMap::UnitMap(std::string levelName) {
 	}
 
 	std::string input;
-	
+	std::vector<Unit*> inputVector;
+	char currentChar;
+
 	for (int y = 0; std::getline(mapFile, input); y++) {
 		for (int x = 0; x < input.length(); x++) {
-
+			currentChar = input[x];
+			switch (currentChar) {
+			case '$':
+			case '&':
+				inputVector.push_back(new Unit(10, 10, currentChar));
+				break;
+			default:
+				inputVector.push_back(nullptr);
+				break;
+			}
 		}
+		_unitMap.push_back(inputVector);
+		inputVector.clear();
 	}
 }
 
@@ -29,6 +42,10 @@ UnitMap::~UnitMap() {
 			}
 		}
 	}
+}
+
+std::vector<std::vector<Unit*> > UnitMap::getUnitMap() {
+	return _unitMap;
 }
 
 Unit * UnitMap::getUnit(unsigned int x, unsigned int y) {

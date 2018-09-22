@@ -4,8 +4,9 @@
 
 class Map {
 public:
-	Map();
+	Map(std::string levelName);
 	~Map();
+	std::vector<std::string> getMap();
 private:
 	std::vector<std::string> _map;
 };
