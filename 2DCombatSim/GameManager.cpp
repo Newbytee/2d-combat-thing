@@ -4,7 +4,6 @@
 #include "UnitMap.h"
 #include "Utils.h"
 #include <string>
-#include <exception>
 #include <iostream>
 
 GameManager::GameManager() {
@@ -15,15 +14,22 @@ GameManager::GameManager() {
 	GameLogic game;
 	Utils utils;
 	std::string tmpInput;
-	int tmpInt;
+	std::array<int, 2> inputArray;
 
-	while (gameIsRunning) {
+	utils.clearScreen();
+	while (gameIsRunning) {		
 		game.printLevel(units.getUnitMap(), map.getMap());
 		std::cin >> tmpInput;
-
-		tmpInt = utils.parseInteger(tmpInput);
-
-		std::cout << tmpInt;
+		utils.clearScreen();
+		inputArray = utils.parseInteger(tmpInput);
+		
+		if (inputArray[1] == 0) {
+			printf("Invalid input!\n");
+		} else {
+			for (int i = 0; i < inputArray[0]; i++) {
+				game.simulate(units.getUnitMapPtr());
+			}
+		}
 	}	
 }
 

@@ -37,11 +37,13 @@ UnitMap::UnitMap(std::string levelName) {
 UnitMap::~UnitMap() {
 	for (int y = 0; y < _unitMap.size(); y++) {
 		for (int x = 0; x < _unitMap[y].size(); x++) {
-			if (_unitMap[y][x] != nullptr) {
-				delete _unitMap[y][x];
-			}
+			delete _unitMap[y][x];
 		}
 	}
+}
+
+std::vector<std::vector<Unit*> > * UnitMap::getUnitMapPtr() {
+	return &_unitMap;
 }
 
 std::vector<std::vector<Unit*> > UnitMap::getUnitMap() {

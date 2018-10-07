@@ -1,8 +1,10 @@
 #pragma once
 #include <string>
+#include <array>
 class Utils {
 public:
 	Utils();
 	~Utils();
-	int parseInteger(std::string input);
+	std::array<int, 2> parseInteger(std::string input);
+	void clearScreen();
 };

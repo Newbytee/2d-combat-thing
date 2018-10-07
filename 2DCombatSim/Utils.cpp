@@ -1,17 +1,16 @@
 #include "Utils.h"
-#include <string>
-#include <cmath>
 
 Utils::Utils()
 {
 }
 
-
 Utils::~Utils()
 {
 }
 
-int Utils::parseInteger(std::string input) {
+std::array<int, 2> Utils::parseInteger(std::string input) {
+	std::array<int, 2> returnArray;
+	returnArray[1] = 1;
 	int parsedValue = 0;
 	int tmpInteger;
 	int sign = 1;
@@ -53,11 +52,16 @@ int Utils::parseInteger(std::string input) {
 				sign = -1;
 			} else {
 				i = input.size();
+				returnArray[1] = 0;
 			}
 			break;
 		}
 		parsedValue = parsedValue * 10 + tmpInteger;
 	}
-	parsedValue = parsedValue * sign;
-	return parsedValue;
+	returnArray[0] = parsedValue * sign;
+	return returnArray;
+}
+
+void Utils::clearScreen() {
+	printf("%s", (std::string(100, '\n')).c_str());
 }
