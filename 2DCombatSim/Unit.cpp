@@ -12,8 +12,7 @@ Unit::Unit(int hp, int atk, char type) {
 Unit::~Unit() {
 }
 
-int Unit::getHp()
-{
+int Unit::getHp() {
 	return _hp;
 }
 

@@ -37,3 +37,7 @@ Map::~Map() {
 std::vector<std::string> Map::getMap() {
 	return _map;
 }
+
+std::vector<std::string>* Map::getMapPtr() {
+	return &_map;
+}

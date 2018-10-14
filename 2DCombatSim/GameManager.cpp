@@ -11,14 +11,14 @@ GameManager::GameManager() {
 
 	UnitMap units = UnitMap(currentLevel);
 	Map map = Map(currentLevel);
-	GameLogic game;
+	GameLogic game(units.getUnitMapPtr(), map.getMapPtr());
 	Utils utils;
 	std::string tmpInput;
 	std::array<int, 2> inputArray;
 
 	utils.clearScreen();
 	while (gameIsRunning) {		
-		game.printLevel(units.getUnitMap(), map.getMap());
+		game.printLevel();
 		std::cin >> tmpInput;
 		utils.clearScreen();
 		inputArray = utils.parseInteger(tmpInput);
@@ -27,7 +27,7 @@ GameManager::GameManager() {
 			printf("Invalid input!\n");
 		} else {
 			for (int i = 0; i < inputArray[0]; i++) {
-				game.simulate(units.getUnitMapPtr());
+				game.simulate();
 			}
 		}
 	}	

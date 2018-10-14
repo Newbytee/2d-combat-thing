@@ -1,8 +1,9 @@
 ﻿  GameLogic.cpp
-c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(31): warning C4018: '<': signed/unsigned mismatch
-c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(32): warning C4018: '<': signed/unsigned mismatch
-c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(37): warning C4018: '<': signed/unsigned mismatch
-c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(38): warning C4018: '<': signed/unsigned mismatch
-c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(46): warning C4018: '<': signed/unsigned mismatch
-c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(47): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(34): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(35): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(40): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(41): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(44): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(57): warning C4018: '<': signed/unsigned mismatch
+c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(58): warning C4018: '<': signed/unsigned mismatch
   2DCombatSim.vcxproj -> C:\Users\Stefan Hansson\source\repos\2d-combat-thing\Debug\2DCombatSim.exe
