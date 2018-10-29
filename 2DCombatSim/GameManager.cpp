@@ -17,7 +17,7 @@ GameManager::GameManager() {
 	std::array<int, 2> inputArray;
 
 	utils.clearScreen();
-	while (gameIsRunning) {		
+	while (_gameIsRunning) {		
 		game.printLevel();
 		std::cin >> tmpInput;
 		utils.clearScreen();

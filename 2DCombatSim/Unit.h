@@ -1,7 +1,6 @@
 #pragma once
 class Unit {
 public:
-	Unit();
 	Unit(int hp, int atk, char type);
 	~Unit();
 	int getHp();
