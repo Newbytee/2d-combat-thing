@@ -66,25 +66,27 @@ void GameLogic::simulate() {
 									if ((*_units)[deltaY][deltaX]) {
 										if ((*_units)[deltaY][deltaX]->getType() != (*_units)[y][x]->getType()) {
 											targetFound = true;
-											printf("%c %c", (*_units)[deltaY][deltaX]->getType(), (*_units)[y][x]->getType());
-											if (deltaX > 0) {
+											printf("%i %i", deltaX, deltaY);
+											//printf("%c %c", (*_units)[deltaY][deltaX]->getType(), (*_units)[y][x]->getType());
+											if (searchX > 0) {
 												moveX += 1;
 											}
-											else if (deltaX == 0) {
+											else if (searchX == 0) {
 												moveX += 0;
 											}
-											else if (deltaX < 0) {
+											else if (searchX < 0) {
 												moveX += -1;
 											}
-											if (deltaY > 0) {
+											if (searchY > 0) {
 												moveY += 1;
 											}
-											else if (deltaY == 0) {
+											else if (searchY == 0) {
 												moveY += 0;
 											}
-											else if (deltaY < 0) {
+											else if (searchY < 0) {
 												moveY += -1;
 											}
+											//printf("%i, %i\n", moveX, moveY);
 										}
 									}
 								}
