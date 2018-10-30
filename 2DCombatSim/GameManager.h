@@ -4,6 +4,6 @@ public:
 	GameManager();
 	~GameManager();
 private:
-	bool _gameIsRunning = true;
+	bool _gameIsOver = false;
 };
 
