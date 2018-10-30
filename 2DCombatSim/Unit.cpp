@@ -9,6 +9,10 @@ Unit::Unit(int hp, int atk, char type) {
 Unit::~Unit() {
 }
 
+void Unit::modHp(int hp) {
+	_hp += hp;
+}
+
 int Unit::getHp() {
 	return _hp;
 }

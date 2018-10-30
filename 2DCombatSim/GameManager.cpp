@@ -27,10 +27,12 @@ GameManager::GameManager() {
 				printf("Invalid input!\n");
 			}
 			else {
+				printf("Figthing...");
 				for (int i = 0; i < inputArray[0]; i++) {
 					game.simulate();
 				}
 			}
+			game.checkSurvivors();
 		}
 	}
 	if (!game.getDraw()) {

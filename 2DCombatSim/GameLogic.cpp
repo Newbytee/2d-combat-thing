@@ -39,7 +39,7 @@ void GameLogic::simulate() {
 	for (unsigned int y = 0; y < _units->size(); y++) {
 		for (unsigned int x = 0; x < (*_units)[y].size(); x++) {
 			bufferedUnits[y].push_back(nullptr);
-		}		
+		}
 	}
 
 	for (unsigned int y = 0; y < _units->size(); y++) {
@@ -59,6 +59,7 @@ void GameLogic::simulate() {
 										if ((*_units)[deltaY][deltaX]) {
 											if ((*_units)[deltaY][deltaX]->getType() != (*_units)[y][x]->getType()) {
 												targetFound = true;
+												(*_units)[deltaY][deltaX]->modHp((*_units)[y][x]->getAtk() * -1);
 												//std::cout << "Attack!!\n";
 												//std::cout << deltaX << '\t' << deltaY << '\n';
 											}
@@ -108,7 +109,7 @@ void GameLogic::simulate() {
 						delete (*_units)[y][x];
 						(*_units)[y][x] = nullptr;
 					}*/
-				}				
+				}
 			}
 		}
 	}
@@ -119,6 +120,19 @@ void GameLogic::simulate() {
 				(*_units)[y][x] = new Unit(bufferedUnits[y][x]->getHp(), bufferedUnits[y][x]->getAtk(), bufferedUnits[y][x]->getType());
 				delete bufferedUnits[y][x];
 				bufferedUnits[y][x] = nullptr;
+			}
+		}
+	}
+}
+
+void GameLogic::checkSurvivors() {
+	for (unsigned int y = 0; y < _units->size(); y++) {
+		for (unsigned int x = 0; x < (*_units)[y].size(); x++) {
+			if ((*_units)[y][x]) {
+				if ((*_units)[y][x]->getHp() <= 0) {
+					delete (*_units)[y][x];
+					(*_units)[y][x] = nullptr;
+				}
 			}
 		}
 	}

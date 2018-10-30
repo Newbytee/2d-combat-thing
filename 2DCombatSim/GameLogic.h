@@ -8,6 +8,7 @@ public:
 	~GameLogic();
 	void printLevel();
 	void simulate();
+	void checkSurvivors();
 	bool checkMoveAllowed(unsigned int x, unsigned int y);
 	bool checkWin();
 	bool getDraw();

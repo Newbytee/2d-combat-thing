@@ -6,4 +6,3 @@ public:
 private:
 	bool _gameIsOver = false;
 };
-

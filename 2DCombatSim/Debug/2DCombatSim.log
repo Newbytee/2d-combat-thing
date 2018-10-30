@@ -1,4 +1,2 @@
-﻿  GameLogic.cpp
-c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(33): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\stefan hansson\source\repos\2d-combat-thing\2dcombatsim\gamelogic.cpp(117): warning C4018: '<': signed/unsigned mismatch
+﻿  GameManager.cpp
   2DCombatSim.vcxproj -> C:\Users\Stefan Hansson\source\repos\2d-combat-thing\Debug\2DCombatSim.exe
